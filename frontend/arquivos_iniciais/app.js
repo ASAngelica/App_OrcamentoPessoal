@@ -1,3 +1,4 @@
+// Classe para instanciar um obj a partir dos dados do formulario
 class Despesa {
     constructor(ano, mes, dia, tipo, descricao, valor) {
         this.ano = ano
@@ -8,6 +9,10 @@ class Despesa {
         this.valor = valor
     }
 }
+
+// Classe para instanciar o(s) objeto(s) da API de armazenamento na web (Web Storage) que fornece mecanismos 
+// para que os navegadores possam armazenar dados através de chave/valor de uma forma mais eficiente 
+// que os cookies.
 
 class Bd {
 
@@ -33,6 +38,9 @@ class Bd {
 
 let bd = new Bd()
 
+// instancia um objeto despesa da classe Despesa a partir dos dados do formulario e através do método
+// 'gravar' da classe 'Bd' utiliza a API de armazenamento na web (Web Storage) para criar persistencia de 
+// dados já que a aplicação não terá conexão com Banco de Dados algum.
 function cadastrarDespesa(){
     let ano = document.getElementById('ano')
     let mes = document.getElementById('mes')
