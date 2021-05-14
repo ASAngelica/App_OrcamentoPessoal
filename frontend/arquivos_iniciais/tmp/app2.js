@@ -73,25 +73,17 @@ function cadastrarDespesa(){
     // em um componente Modal do bootstrap, e o recurso Modal da biblioteca jquery.
     if(despesa.validarDados()){
         bd.gravar(despesa)
+        //dialog de sucesso
 
-        document.getElementById('modal_titulo').innerHTML = 'Registro inserido com sucesso!'
-        document.getElementById('modal_titulo_div').className = 'modal-header text-success'
-        document.getElementById('modal_conteudo').innerHTML = 'Despesa cadastrada com sucesso!'
-        document.getElementById('modal_btn').innerHTML = 'Voltar'
-        document.getElementById('modal_btn').className = 'btn btn-success'
+        $('#textDanger').addClass('text-success')
+        $('#btnModalFooter').removeClass('btn btn-danger').addClass('btn btn-success')
+        document.getElementById('exampleModalLabel').textContent = 'Registro inserido com sucesso!'
+        document.getElementById('modalBody').textContent = 'A Despesa foi cadastrada com sucesso!'
+        document.getElementById('btnModalFooter').textContent = 'Voltar'
 
         $('#modalRegistraDespesa').modal('show') //jquery
-
     } else {
-
-        document.getElementById('modal_titulo').innerHTML = 'Erro na inclusão do registro!'
-        document.getElementById('modal_titulo_div').className = 'modal-header text-danger'
-        document.getElementById('modal_conteudo').innerHTML = 'O preenchimento de todos os campos é Obrigatório.'
-        document.getElementById('modal_btn').innerHTML = 'Voltar e corrigir'
-        document.getElementById('modal_btn').className = 'btn btn-danger'
-
+        //dialog de erro
         $('#modalRegistraDespesa').modal('show') //jquery
     }
 }
-
-
